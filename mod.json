@@ -1,13 +1,13 @@
 {
-    "geode": "4.9.0",
+    "geode": "5.5.3",
     "gd": {
-        "win": "2.2074",
-        "android": "2.2074",
-        "mac": "2.2074",
-        "ios": "2.2074"
+        "win": "2.2081",
+        "android": "2.2081",
+        "mac": "2.2081",
+        "ios": "2.2081"
     },
 
-    "version": "v1.0.7",
+    "version": "v1.0.8",
     "id": "undefined0.controllable",
     "name": "Controllable",
     "developer": "undefined0",
@@ -31,8 +31,8 @@
     },
 
 	"dependencies": {
-		"alphalaneous.alphas_geode_utils": "v1.1.5",
-        "geode.node-ids": "v1.20.1"
+		"alphalaneous.alphas_geode_utils": "v1.2.4",
+        "geode.node-ids": "v1.23.3"
 	},
 
     "api": {
