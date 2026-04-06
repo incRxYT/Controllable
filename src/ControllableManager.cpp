@@ -25,11 +25,10 @@ cl::Manager& cl::Manager::get() {
 
 void cl::Manager::init() {
     // note: this will be called multiple times if multiple settings are changed
-    geode::listenForAllSettingChanges([this](std::shared_ptr<geode::SettingV3>){
-        updateSettings();
-        m_settingsChangedThisFrame = true;
-    });
-
+   geode::listenForAllSettingChanges([this](std::string_view key, std::shared_ptr<geode::SettingV3> setting){
+    updateSettings();
+    m_settingsChangedThisFrame = true;
+});
     updateSettings();
 
     cocos2d::CCScheduler::get()->scheduleUpdateForTarget(this, 0, false);
@@ -522,7 +521,7 @@ void cl::Manager::pressButton(GamepadButton button, bool allowFallback) {
     } else if (button == GamepadButton::B && !g_isAdjustingSlider && !g_isEditingText) {
         // B button simulates escape key
         cocos2d::CCKeyboardDispatcher::get()->dispatchKeyboardMSG(cocos2d::enumKeyCodes::KEY_Escape, true, false);
-    }
+    } cocos2d::CCKeyboardDispatcher::get()->dispatchKeyboardMSG(cocos2d::enumKeyCodes::KEY_Escape, true, false, 0.0);
 }
 
 void cl::Manager::depressButton(GamepadButton button, bool allowFallback) {
